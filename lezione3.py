@@ -84,7 +84,7 @@ For example, the cube of 2 is written as 2**3 in Python.
 Make a list of the first 10 cubes (that is, the cube of each integer from 1 through 10), 
 and use a for loop to print out the value of each cube.
 """
-cubes = [number ** 3 for number in range(1, 11)]
+cubes:list = [number ** 3 for number in range(1, 11)]
 
 for i in cubes:
     print(i)
@@ -93,7 +93,7 @@ print(" ")
 """
 4-9. Cube Comprehension: Use a list comprehension to generate a list of the first 10 cubes.
 """
-x = [i ** 3 for i in range(1, 11)]
+x:list = [i ** 3 for i in range(1, 11)]
 
 print(x)
 print(" ")
@@ -111,7 +111,7 @@ Then use a slice to print three items from the middle of the list.
 Then use a slice to print the last three items in the list.
 """
 
-x = [i ** 3 for i in range(1, 11)]
+x:list = [i ** 3 for i in range(1, 11)]
 
 print("List of cubes:", cubes)
 
@@ -131,7 +131,7 @@ Make a copy of the list of pizzas, and call it friend_pizzas. Then, do the follo
 and then use a for loop to print the first list. Print the message My friend’s favorite pizzas are:, 
 and then use a for loop to print the second list. Make sure each new pizza is stored in the appropriate list.
 """
-friend_pizzas = pizzas[:]
+friend_pizzas:list = pizzas[:]
 pizzas.append("Marinara")
 friend_pizzas.append("4 stagioni")
 
@@ -148,7 +148,7 @@ print(" ")
 All versions of foods.py in this section have avoided using for loops when printing, to save space.
  Choose a version of foods.py, and write two for loops to print each list of foods.
 """
-my_foods = ['pizza', 'pasta', 'sushi']
+my_foods:list = ['pizza', 'pasta', 'sushi']
 friend_foods = my_foods[:]
 
 my_foods.append('cannoli')
@@ -167,7 +167,7 @@ for food in friend_foods:
 Choose three of the programs you’ve written in this chapter and modify each one to comply with PEP 8.
 """
 
-pizzas = ["Margherita", "Boscaiola", "4 Formaggi"]
+pizzas:list = ["Margherita", "Boscaiola", "4 Formaggi"]
 
 for pizza in pizzas:
     print(f"I like {pizza}")
@@ -178,7 +178,7 @@ print("I think they're more versatile. For example, you can slice a focaccia and
 print(" ")
 
 
-animals = ["Dog", "Cat", "Horse"]
+animals:list = ["Dog", "Cat", "Horse"]
 
 for animal in animals:
     print(animal)
@@ -211,8 +211,7 @@ evaluates to True or False.
 5 tests evaluate to False.
 """
 
-# Define a variable
-car = 'subaru'
+car:str = 'subaru'
 
 print("Is car == 'subaru'? I predict True")
 print(car == 'subaru')
@@ -254,7 +253,7 @@ If it is, print a message that the player just earned 5 points.
 • Write one version of this program that passes the if test and another that fails. 
 (The version that fails will have no output.)
 """
-alien_color = "green"
+alien_color:str = "green"
 
 if alien_color == "green":
     print("Congratulations! You just earned 5 points")
@@ -273,7 +272,7 @@ print(" ")
 • If the alien’s color isn’t green, print a statement that the player just earned 10 points.
 • Write one version of this program that runs the if block and another that runs the else block.
 """
-alien_color= "green"
+alien_color:str= "green"
 
 if alien_color == "green":
     print("Congratulations! You just earned 5 points for shooting the green alien")
@@ -297,7 +296,7 @@ print(" ")
 • Write three versions of this program, making sure each message is printed for the appropriate color alien.
 """
 
-alien_color= "green"
+alien_color:str= "green"
 
 if alien_color == "green":
     print("Congratulations! You just earned 5 points for shooting the green alien")
@@ -348,4 +347,67 @@ elif age < 65:
     print("The person is an adult")
 else:
     print("The person is an elder")
+print(" ")
+
+"""
+5-7. Favorite Fruit: 
+Make a list of your favorite fruits, 
+and then write a series of independent if statements that check for certain fruits in your list.
+• Make a list of your three favorite fruits and call it favorite_fruits.
+• Write five if statements. Each should check whether a certain kind of fruit is in your list. 
+If the fruit is in your list, the if block should print a statement, such as You really like Apples!
+"""
+favorite_fruits:list = ["Watermelon","Apple","Banana"]
+if "Apple" in favorite_fruits:
+    print("Wow you really like apples")
+if "Banana" in favorite_fruits:
+    print("Wow you really like bananas")
+if "Cherry" in favorite_fruits:
+    print("Wow you really like cherries")
+if "Watermelon" in favorite_fruits:
+    print("Wow you really like watermelons")
+if "Pear" in favorite_fruits:
+    print("Wow you really like pears")
+print(" ")
+
+"""
+5-8. Hello Admin: Make a list of five or more usernames, including the name 'admin'. 
+Imagine you are writing code that will print a greeting to each user after they log in to a website. 
+Loop through the list, and print a greeting to each user.
+• If the username is 'admin', print a special greeting, 
+such as Hello admin, would you like to see a status report?
+• Otherwise, print a generic greeting, such as Hello Jaden, thank you for logging in again.
+"""
+usernames:list = ["admin", "lorenzo", "claudio", "ginevra", "flavio"]
+
+for username in usernames:
+    if username == 'admin':
+        print("Hello admin, would you like to see a status report?")
+    else:
+        print(f"Hello {username.title()}, thank you for logging in again.")
+print(" ")
+
+"""
+5-10. Checking Usernames: 
+Do the following to create a program that simulates how websites ensure that everyone has a unique username.
+• Make a list of five or more usernames called current_users.
+• Make another list of five usernames called new_users. 
+Make sure one or two of the new usernames are also in the current_users list.
+• Loop through the new_users list to see if each new username has already been used. 
+If it has, print a message that the person will need to enter a new username. 
+If a username has not been used, print a message saying that the username is available.
+• Make sure your comparison is case insensitive. 
+If 'John' has been used, 'JOHN' should not be accepted. 
+(To do this, you’ll need to make a copy of current_users containing the lowercase versions of all existing users.)
+"""
+
+current_users:list = ["claudio", "lorenzo", "emma", "giacomo", "antonio"]
+new_users:list = ["claudio", "osama", "olivia", "gaia", "lorenzo"]
+current_users_lower:list = [user.lower() for user in current_users]
+
+for new_user in new_users:
+    if new_user.lower() in current_users_lower:
+        print(f"Sorry, the username '{new_user}' is already taken. Please enter a new username.")
+    else:
+        print(f"The username '{new_user}' is available.")
 print(" ")
