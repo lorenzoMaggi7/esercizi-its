@@ -146,3 +146,55 @@ city_country("Rome","Italy")
 city_country("Milano","Italy")
 city_country("Las Palmas","Spain")
 print(" ")
+
+"""
+8-7. Album: Write a function called make_album() that builds a dictionary describing a music album. 
+The function should take in an artist name and an album title, 
+and it should return a dictionary containing these two pieces of information. 
+Use the function to make three dictionaries representing different albums. 
+Print each return value to show that the  dictionaries are storing the album information correctly. 
+Use None to add an optional parameter to make_album() that allows you to store the number of songs on an album. 
+If the calling line includes a value for the number of songs, add that value to the album’s dictionary. 
+Make at least one new function call that includes the number of songs on an album.
+"""
+def make_album(name, album_name,songs=None):
+    album:dict = {"artist" : name, "title" : album_name}
+    if songs:
+        album["numbers of songs"] = songs
+    return album
+album1 = make_album("Travis Scott", "Utopia")
+album2 = make_album("Pino Daniele", "Nero a metà", 12)
+album3 = make_album("Starjunk 95", "Visual Paradise", 4)
+
+print(album1)
+print(album2)
+print(album3)
+print(" ")
+
+"""
+8-8. User Albums: Start with your program from Exercise 8-7. 
+Write a while loop that allows users to enter an album’s artist and title. 
+Once you have that information, call make_album() with the user’s input and print the dictionary that’s created. 
+Be sure to include a quit value in the while loop.
+"""
+def make_album(name, title, songs=None):
+    album = {'artist': name, 'title': title}
+    if songs:
+        album['number_of_songs'] = songs
+    return album
+
+while True:
+    artist = input("Enter the artist's name (or 'stop' to exit): ")
+    if artist.lower() == "stop":
+        break
+    title = input("Enter the album title: ")
+    number_of_songs = input("Enter the number of songs on the album (optional): ")
+    
+    if number_of_songs.isdigit(): 
+        number_of_songs = int(number_of_songs)
+    else:
+        number_of_songs = None
+    
+    album = make_album(artist, title, number_of_songs)
+    print(album)
+print(" ")
