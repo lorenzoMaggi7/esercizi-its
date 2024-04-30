@@ -23,9 +23,13 @@ print(string1 != string2)
 
 string_lower:str = "HELLO"
 
-print("\nTests using the lower() method:")
+print("\nTests using the lower() method: TRUE")
 print(f"Is '{string_lower}' equal to 'hello'? I predict True.")
 print(string_lower.lower() == "hello")
+
+print("\nTests using the lower() method: FALSE")
+print(f"Is '{string_lower}' equal to 'ciao'? I predict False.")
+print(string_lower.lower() == "ciao")
 
 number1:int = 10
 number2:int = 5
