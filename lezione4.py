@@ -198,3 +198,105 @@ while True:
     album = make_album(artist, title, number_of_songs)
     print(album)
 print(" ")
+
+"""
+8-9. Messages: Make a list containing a series of short text messages. 
+Pass the list to a function called show_messages(), which prints each text message.
+"""
+def show_messages(messages:list):
+    for message in messages:
+        print(message)
+messages = ["Ciao","Anvedi","Come va?","Na crema"]
+show_messages(messages)
+print(" ")
+
+"""
+8-10. Sending Messages: 
+Start with a copy of your program from Exercise 8-9. 
+Write a function called send_messages() that prints each text message 
+and moves each message to a new list called sent_messages as it’s printed. 
+After calling the function, print both of your lists to make sure the messages were moved correctly.
+"""
+def show_messages(messages):
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop(0)
+        print(current_message)
+        sent_messages.append(current_message)
+
+messages = ["Ciao","Anvedi","Come va?","Na crema"]
+
+sent_messages = []
+
+send_messages(messages, sent_messages)
+
+print("\nOriginal messages:")
+show_messages(messages)
+print("\nSent messages:")
+show_messages(sent_messages)
+print(" ")
+"""
+8-11. Archived Messages: Start with your work from Exercise 8-10. 
+Call the function send_messages() with a copy of the list of messages. 
+After calling the function, print both of your lists to show that the original list has retained its messages.
+"""
+def show_messages(messages):
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop(0)
+        print(current_message)
+        sent_messages.append(current_message)
+
+messages = ["Ciao","Anvedi","Come va?","Na crema"]
+
+messages_copy = messages[:]
+
+sent_messages = []
+
+send_messages(messages_copy, sent_messages)
+
+print("\nOriginal messages:")
+show_messages(messages)
+print("\nSent messages:")
+show_messages(sent_messages)
+print(" ")
+
+"""
+8-12. Sandwiches: 
+Write a function that accepts a list of items a person wants on a sandwich. 
+The function should have one parameter that collects as many items as the function call provides, 
+and it should print a summary of the sandwich that’s being ordered. 
+Call the function three times, using a different number of arguments each time.
+"""
+def make_sandwich(*items):
+    print("Making a sandwich with the following items:")
+    for item in items:
+        print("- " + item)
+
+make_sandwich("Ham", "Cheese", "Lettuce")
+make_sandwich("Turkey", "Brie", "Tomato", "Mayonnaise")
+make_sandwich("Nutella", "Philadelphia")
+print(" ")
+"""
+8-13. User Profile:  
+Build a profile of yourself by calling build_profile(), 
+using your first and last names and three other key-value pairs that describe you. 
+All the values must be passed to the function as parameters. 
+The function then must return a string such as "Eric Crow, age 45, hair brown, weight 67"
+"""
+def build_profile(first_name,last_name,particular_signs,age,height):
+    profile = f"{first_name} {last_name}, age {age}, particular signs {particular_signs}, height {height}"
+    return profile
+
+my_profile = build_profile("Lorenzo", "Maggi", age=22, particular_signs="tattoo", height=180)
+
+print(my_profile)
+print(" ")
+
+
