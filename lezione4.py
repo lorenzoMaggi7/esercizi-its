@@ -314,3 +314,69 @@ def cars(name, model, color, tow_package=False):
     return make_car
 car= cars("subaru", "baracca", color="blue", tow_package=True)
 print(car)
+print(" ")
+"""
+8-15. Printing Models: 
+Put the functions for the example printing_models.py in a separate file called printing_functions.py. 
+Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
+"""
+from printing_models import print_models, show_completed_models
+
+unprinted_designs = ["phone case", "giovanni's robot", "luffy's strawhat"]
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+print(" ")
+"""
+8-16. Imports: Using a program you wrote that has one function in it, store that function in a separate file. 
+Import the function into your main program file, and call the function using each of these approaches:
+import module_name
+from module_name import function_name
+from module_name import function_name as fn
+import module_name as mn
+from module_name import *
+"""
+import favorite_book
+favorite_book.book("Bleach")
+
+from favorite_book import book
+book("Naruto")
+
+from favorite_book import book as custom_book
+custom_book("Steel ball run")
+
+import favorite_book as bk
+bk.book("Mashle")
+
+from favorite_book import *
+book("Blue lock")
+print(" ")
+
+"""
+8-17. Styling Functions: 
+Choose any three programs you wrote for this chapter, 
+and make sure they follow the styling guidelines described in this section.
+"""
+
+def favorite_book(title):
+    """Prints a message about a favorite book."""
+    print(f"One of my favorite books is {title}\n")
+
+favorite_book("Death note")
+
+########################################################
+def make_shirt(size, message):
+    """Prints a summary of the shirt size and message."""
+    print(f"The shirt size is {size} and the message printed on it is: {message}\n")
+
+make_shirt("M", "Daje Roma")
+
+make_shirt(size="L", message="Bella pe te")
+
+#######################################################
+def display_message():
+    """Prints a message about what I am learning in this chapter."""
+    print("In this chapter, I am learning about functions in Python")
+
+display_message()
